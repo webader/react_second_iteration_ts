@@ -1,18 +1,19 @@
 import React from 'react';
 import {userServices} from "./services/user.services";
 
+userServices.getAll().then(value => value.data).then(characters => {
+    for (let character of characters) {
+        console.log(character.name);
+    }
+})
+
 
 const App = () => {
     return (
-            userServices.getAll().then(value => value.data).then(characters => {
-                for (let character of characters) {
-                    console.log(character.name)
-                }
-            })
+      <div>characterName</div>
 
     );
 };
-
 // 1. Описати всю сім'ю сімпсонів (5 персонажів)
 // 2. Створити компонент який описує персонажа (властивості id,name,status,species,gender,image) з цього апі
 // https://rickandmortyapi.com/
