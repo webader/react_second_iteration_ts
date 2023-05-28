@@ -1,8 +1,9 @@
 import axios, {AxiosResponse} from "axios";
 import {ICharacter} from "../interfaces/user.interface";
+
 export const userServices={
     getAll:():Promise<AxiosResponse<ICharacter[]>> => axios('https://rickandmortyapi.com/api/character'),
-    getById:(id:number):Promise<AxiosResponse<ICharacter>> => axios('https://rickandmortyapi.com/api/character/'+id)
+    getById:(id:number):Promise<AxiosResponse<ICharacter>> => axios('https://rickandmortyapi.com/api/character'+id)
 }
 
 
